@@ -1,0 +1,32 @@
+{
+  "name": "airline-reservation-system",
+  "version": "1.0.0",
+  "description": "An Airline Reservation Website Implmented in full-stack",
+  "main": "server.js",
+  "scripts": {
+    "client-install": "npm install --prefix client",
+    "start": "env-cmd -f ./config/dev.env node server.js",
+    "server": "env-cmd -f ./config/dev.env nodemon server.js",
+    "client": "npm start --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
+  },
+  "author": "Vineet Vatsal",
+  "license": "MIT",
+  "dependencies": {
+    "@tailwindcss/forms": "^0.3.4",
+    "amadeus": "^5.7.0",
+    "concurrently": "^6.2.0",
+    "cookie-session": "^1.4.0",
+    "cors": "^2.8.5",
+    "ejs": "^3.1.6",
+    "env-cmd": "^10.1.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.12.11",
+    "passport": "^0.4.1",
+    "passport-google-oauth20": "^2.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  }
+}
